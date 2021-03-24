@@ -1,9 +1,6 @@
 package org.campus02.textanalysis;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
 
 public class ResultManager {
@@ -58,6 +55,28 @@ public class ResultManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
+    public void write() {
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, false))) {
+
+            //A:17
+            for (char c : characters.keySet()) {
+                int value = characters.get(c);
+
+                bw.write(c + ":" + value);
+                bw.newLine();
+            }
+
+            bw.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public HashMap<Character, Integer> getCharacters() {
+        return characters;
     }
 }
