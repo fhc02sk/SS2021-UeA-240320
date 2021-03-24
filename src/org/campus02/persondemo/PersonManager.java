@@ -31,6 +31,29 @@ public class PersonManager {
         }
     }
 
+    public void load(String path) {
+
+        //persons.clear();
+        try (ObjectInputStream ois = new ObjectInputStream(
+                        new FileInputStream(path))){
+
+            int length = (int) ois.readObject();
+
+            for (int i = 0; i < length; i++) {
+                Person p = (Person) ois.readObject();
+                add(p);
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     @Override
     public String toString() {
