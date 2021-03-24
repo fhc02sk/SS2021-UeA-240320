@@ -6,14 +6,17 @@ public class TextAnalysisDemoApp {
 
         ResultManager rm = new ResultManager("D:\\temp\\textanalysis.txt");
 
-        rm.read();
+       // rm.read();
 
-        System.out.println("rm = " + rm);
+       /* System.out.println("rm = " + rm);
 
         rm.getCharacters().put('k', 42);
         rm.getCharacters().put('m', 9);
         rm.getCharacters().put('W', 7);
-        rm.getCharacters().put('d', 71);
+        rm.getCharacters().put('d', 71);*/
+
+        TextAnalyzer textAnalyzer = new TextAnalyzer(rm, "D:\\temp\\text.txt");
+        textAnalyzer.read();
 
         rm.write();
 
@@ -22,6 +25,7 @@ public class TextAnalysisDemoApp {
 
         System.out.println("x1.hashCode() = " + x1.hashCode());
         System.out.println("x2.hashCode() = " + x2.hashCode());*/
+
 
     }
 }
