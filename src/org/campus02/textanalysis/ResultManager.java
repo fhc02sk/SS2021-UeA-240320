@@ -57,6 +57,7 @@ public class ResultManager {
         }
     }
 
+    //private HashMap<Character, Integer> characters;
     public void write() {
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, false))) {
