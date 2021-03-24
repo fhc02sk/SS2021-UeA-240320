@@ -16,6 +16,11 @@ public class PersonDemoApp {
         //pm.save("D:\\temp\\persons_20210324.txt");
 
         pm.load("D:\\temp\\persons_20210324.txt");
-        System.out.println("pm = " + pm);
+
+
+        String s = "A";
+        char c = s.charAt(0);
+        int n = Integer.parseInt("123");
+
     }
 }
